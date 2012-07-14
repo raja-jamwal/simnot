@@ -1,0 +1,52 @@
+SimNot - crossplatform Simple music Notation generator version 0.1 alpha
+
+Author ------------------------------------------------------------------
+
+Raja Jamwal
+
+Description -------------------------------------------------------------
+
+It's an alternative to actual sheet music, it produces png images of sheet music in simple notation
+Simnot uses its own midi analyzer, notation generator. Simnot takes good care of note timing, the distance(pixel distance) between two notes on image is not some random distance or some constant distance, it's mathematically defined to real timing information.
+
+Binaries ----------------------------------------------------------------
+
+Statically linked binaries are available for:
+
+32 bit:
+	Windows
+	Linux
+
+Program arguments -------------------------------------------------------
+
+simnot -h <number> -w <number> -i <path_to_midi_file> -f <path_to_font_file> -t -d
+
+-h <number> : height of the page (png image)
+-w <number> : width of the page (png image)
+-i <string> : relative or absolute path to midi file
+-f <string> : relative or absolute path to font (true type font or ttf)
+-t : boolean value, lists all midi tracks inside midi file when specified
+-d : boolean value, stores all errors in error.log file, when specified
+     helps in debugging program or used when submitting bugs
+
+you must define -f (font) otherwise the program will not work
+
+Usage --------------------------------------------------------------------
+
+Linux:
+
+	./simnot -i my_midi_file.mid -f "/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf"
+
+Windows(xp):
+
+	simnot -i my_midi_file.mid -f C:\WINDOWS\Fonts\ARIAL.ttf
+
+Output -------------------------------------------------------------------
+
+The output file are png images. Each image includes notes from all tracks that could fit in specified image width, if all tracks doesn't fits in the page height, you can increase the page height with -h program argument, you can list number of tracks inside a midi file using -t, this'll give you a rough idea about page height. You can then either use the raw images or you can convert them to PDF using any image to pdf converter.
+
+More information ---------------------------------------------------------
+
+http://experi-blog.tk
+linux1@zoho.com
+
